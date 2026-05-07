@@ -15,7 +15,7 @@ export default function ProfileHeader() {
         {/* Avatar placeholder — initials */}
         <div className="w-22 h-24  rounded-full bg-gradient-to-br from-[#2a4a6b] to-[#1a3050] border border-[#2a3a4a] flex items-center justify-center text-lg font-bold text-[#7ab3d4] shrink-0 overflow-hidden">
             <img
-              src="/profile.jpg"
+              src="/Avatar.png"
               alt="Profile"
               className="w-full h-full object-cover"
             />
