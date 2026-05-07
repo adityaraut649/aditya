@@ -44,6 +44,8 @@ export default function App() {
             occasionally reading source code at midnight just to understand how something works.
           </p>
         </section>
+        
+        <ElsewhereSection />
 
         {/* Interests */}
         <section className="mt-8">
@@ -67,6 +69,7 @@ export default function App() {
           </ul>
         </section>
 
+        
         <ProjectsSection />
         <SkillsSection />
         <EducationSection />
@@ -77,7 +80,6 @@ export default function App() {
           <ContributionGraph />
         </section>
 
-        <ElsewhereSection />
         <ContactSection />
         <Footer />
       </div>
