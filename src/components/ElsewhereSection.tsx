@@ -40,9 +40,12 @@ const links: LinkItem[] = [
 export default function ElsewhereSection() {
   return (
     <section className="mt-10">
-      <p className="text-[#555] text-xs uppercase tracking-widest mb-4 font-medium">
-        Elsewhere
-      </p>
+      <p
+  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+>
+  Elsewhere
+</p>
       <div className="grid grid-cols-2 border border-[#222] rounded-xl overflow-hidden ">
         {links.map(({ label, href, username, Icon }, idx) => (
           <a

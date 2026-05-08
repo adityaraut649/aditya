@@ -33,9 +33,12 @@ export default function App() {
 
         {/* About */}
         <section className="mt-10">
-            <p className="text-[#e8e8e8] text-lg font-semibold mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>
-              About
-            </p>
+            <p
+  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+>
+  About
+</p>
 
             <p className="text-[#999] text-sm leading-relaxed mb-3">
               I Write Code, Break Things, Fix Them & Repeat —{" "}
@@ -100,17 +103,26 @@ export default function App() {
           </ul>
         </section>
 
-        
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <ProjectsSection />
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <SkillsSection />
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <EducationSection />
-
+        
         {/* GitHub Contribution Graph */}
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <section className="mt-10">
-          <p className="text-[#555] text-xs uppercase tracking-widest mb-5 font-medium">Contributions</p>
+                    <p
+            className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+            style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+          >
+            Contributions
+          </p>
           <ContributionGraph />
         </section>
-
+        
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <ContactSection />
         <Footer />
       </div>

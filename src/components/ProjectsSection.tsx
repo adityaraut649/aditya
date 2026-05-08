@@ -39,7 +39,12 @@ export default function ProjectsSection() {
 
   return (
     <section className="mt-10">
-      <p className="text-[#555] text-xs uppercase tracking-widest mb-4 font-medium">Projects</p>
+      <p
+  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+>
+  Projects
+</p>
       <div className="space-y-0">
         {visible.map((project, idx) => (
           <div

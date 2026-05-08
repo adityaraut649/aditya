@@ -50,7 +50,12 @@ const stack: Category[] = [
 export default function SkillsSection() {
   return (
     <section className="mt-10">
-      <p className="text-[#555] text-xs uppercase tracking-widest mb-5 font-medium">Stack</p>
+      <p
+  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+>
+  Stack
+</p>
       <div className="space-y-5">
         {stack.map((group) => (
           <div key={group.category}>
