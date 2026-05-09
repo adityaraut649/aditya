@@ -8,6 +8,7 @@ import EducationSection from "./components/EducationSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import InfoCard from "./components/InfoCard";
+import SpotifyCard from "./components/SpotifyCard";
 
 export default function App() {
   return (
@@ -20,25 +21,37 @@ export default function App() {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111]/30 to-[#111111]" />
-        
       </div>
       
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-5 pb-16 -mt-6 relative z-10">
         <ProfileHeader />
+
+        <div className="mt-10">
+        <SpotifyCard
+            title="One Day"
+            artist="Kodaline"
+            albumImage="https://i.scdn.co/image/ab67616d0000485174b1285d420d4d8494c72df5"
+            songUrl="https://open.spotify.com/track/1nqJvzF8URpip2qbg8izYb"
+          />
+        </div>
+
+
+        <div className="border-t border-[#2a2a2a] my-8"></div>
         <div className="mt-10">
           <InfoCard />
         </div>
         <div className="border-t border-[#2a2a2a] my-8"></div>
 
+         
         {/* About */}
         <section className="mt-10">
             <p
-  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
-  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
->
-  About
-</p>
+              className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5 "
+              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+            >
+              About
+            </p>
 
             <p className="text-[#999] text-sm leading-relaxed mb-3">
               I Write Code, Break Things, Fix Them & Repeat —{" "}
@@ -80,11 +93,11 @@ export default function App() {
           </section>
           <div className="border-t border-[#2a2a2a] my-8"></div>
             <ElsewhereSection />
-
+           
         {/* Interests */}
         <section className="mt-8">
           <div className="border-t border-[#2a2a2a] my-8"></div>
-          <p className="text-[#555] text-xl uppercase tracking-widest mb-4 font-medium">
+          <p className="text-[#555] text-xl uppercase tracking-widest mb-4 font-medium hover-underline">
             Interests
           </p>
           <ul className="space-y-2">

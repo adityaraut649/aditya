@@ -44,7 +44,7 @@ export default function ElsewhereSection() {
   className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
   style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
 >
-  Elsewhere
+  Let's connect
 </p>
       <div className="grid grid-cols-2 border border-[#222] rounded-xl overflow-hidden ">
         {links.map(({ label, href, username, Icon }, idx) => (
@@ -60,7 +60,7 @@ export default function ElsewhereSection() {
           >
             <Icon size={18} className="text-[#888] flex-shrink-0" />
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 hover-underline">
               <p className="text-[#e8e8e8] text-sm font-medium leading-tight truncate">
                 {label}
               </p>

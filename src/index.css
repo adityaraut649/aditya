@@ -39,3 +39,30 @@ html {
   background: #26a641;
   color: #fff;
 }
+
+.hover-underline {
+  @apply relative inline-block transition-colors duration-300;
+}
+
+.hover-underline::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 h-[1px] w-0 transition-all duration-300;
+  background-color: currentColor;
+}
+
+.hover-underline:hover::after {
+  @apply w-full;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}

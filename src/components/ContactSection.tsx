@@ -7,6 +7,7 @@ export default function ContactSection() {
         <a
           href="mailto:vraut3468@gmail.com"
           className="text-[#e8e8e8] hover:text-white transition-colors"
+          
         >
           vraut3468@gmail.com
         </a>
@@ -14,7 +15,11 @@ export default function ContactSection() {
       <p className="text-sm text-[#666] mt-2">
         Based in <span className="text-[#888]">Nagpur, India</span> — open to remote work worldwide.
       </p>
-      <p className="text-sm text-[#555] mt-1">I typically reply within 24 hours.</p>
+            <p className="group relative inline-block text-sm text-[#555] mt-1 cursor-pointer">
+        I typically reply within 24 hours.
+        
+        <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-[#555] transition-all duration-300 group-hover:w-full"></span>
+      </p>
     </section>
   );
 }

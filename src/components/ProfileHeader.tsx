@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { BadgeCheck } from "lucide-react";
 export default function ProfileHeader() {
   const [copied, setCopied] = useState(false);
 
@@ -21,33 +21,43 @@ export default function ProfileHeader() {
             />
         </div>
         <div>
-          <h1
-              className="text-[#e8e8e8] text-4xl tracking-[0.01em] leading-tight"
-              style={{ fontFamily: '"Instrument Serif", serif' }}
-                >
-                  Aditya Rajendera Raut
-                </h1>
-          <p className="text-[#666] text-base mt-0.5">
-            I build things ·{" "}
-            <button
-              onClick={copyEmail}
-              className="text-[#666] hover:text-[#999] transition-colors cursor-pointer"
-              title="Copy email"
-            >
-              vraut3468@gmail.com
-            </button>{" "}
-            <span
-              onClick={copyEmail}
-              className="inline-block cursor-pointer hover:text-[#999] transition-colors text-[#444]"
-              title={copied ? "Copied!" : "Copy email"}
-            >
-              {copied ? "✓" : "⎘"}
-            </span>
-          </p>
-          <p className="text-[#555] text-base mt-1">
-            22 &nbsp;·&nbsp; engineer &nbsp;·&nbsp; developer &nbsp;·&nbsp; builder
-          </p>
-        </div>
+            <div className="flex items-center gap-2.5">
+              <h1
+                className="text-[#e8e8e8] text-4xl tracking-[0.01em] leading-tight"
+                style={{ fontFamily: '"Instrument Serif", serif' }}
+              >
+                Aditya Rajendera Raut
+              </h1>
+
+              <BadgeCheck
+                size={24}
+                strokeWidth={2.2}
+                className="fill-[#1d9bf0] text-black mt-1"
+              />
+            </div>
+
+            <p className="text-[#666] text-base mt-0.5">
+              I build things ·{" "}
+              <button
+                onClick={copyEmail}
+                className="text-[#666] hover:text-[#999] transition-colors cursor-pointer"
+                title="Copy email"
+              >
+                vraut3468@gmail.com
+              </button>{" "}
+              <span
+                onClick={copyEmail}
+                className="inline-block cursor-pointer hover:text-[#999] transition-colors text-[#444]"
+                title={copied ? "Copied!" : "Copy email"}
+              >
+                {copied ? "✓" : "⎘"}
+              </span>
+            </p>
+
+            <p className="text-[#555] text-base mt-1">
+              22 · engineer · developer · builder
+            </p>
+          </div>
       </div>
 
       {/* Links icon row */}
