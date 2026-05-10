@@ -85,7 +85,7 @@ export default function EducationSection() {
   return (
     <section className="mt-10">
       <p
-  className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+  className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
   style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
 >
   Education

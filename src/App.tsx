@@ -47,7 +47,7 @@ export default function App() {
         {/* About */}
         <section className="mt-10">
             <p
-              className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5 "
+              className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5 "
               style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
             >
               About
@@ -127,7 +127,7 @@ export default function App() {
         <div className="border-t border-[#2a2a2a] my-8"></div>
         <section className="mt-10">
                     <p
-            className="text-[#f1f1f1] text-[22px] leading-none tracking-wide mb-5"
+            className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
             style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
           >
             Contributions
