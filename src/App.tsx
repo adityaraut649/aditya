@@ -9,9 +9,12 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import InfoCard from "./components/InfoCard";
 import SpotifyCard from "./components/SpotifyCard";
+import Oneko from "./components/Oneko";
 
 export default function App() {
   return (
+     <div className="min-h-screen bg-[#111111] text-white">
+      <Oneko />
     <div className="min-h-screen bg-[#111111] text-[#e8e8e8] font-sans">
       {/* Mountain Hero Banner */}
       <div className="relative w-full h-48 md:h-64 overflow-hidden">
@@ -139,6 +142,7 @@ export default function App() {
         <ContactSection />
         <Footer />
       </div>
+    </div>
     </div>
   );
 }
