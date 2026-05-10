@@ -13,13 +13,38 @@ export default function ProfileHeader() {
     <div className="flex items-start justify-between pt-2">
       <div className="flex items-center gap-4">
         {/* Avatar placeholder — initials */}
-        <div className="w-22 h-24  rounded-full bg-gradient-to-br from-[#2a4a6b] to-[#1a3050] border border-[#2a3a4a] flex items-center justify-center text-lg font-bold text-[#7ab3d4] shrink-0 overflow-hidden">
-            <img
-              src="/Avatar.png"
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
-        </div>
+          <div className="relative shrink-0 group">
+            {/* Thunder Aura */}
+            <div className="absolute inset-0 rounded-full thunder-aura" />
+
+            {/* Avatar */}
+            <div
+              className="
+                relative
+                w-24
+                h-24
+                rounded-full
+                overflow-hidden
+                border
+                border-white/10
+                bg-[#111]
+                transition-all
+                duration-500
+                group-hover:scale-[1.02]
+                group-hover:-translate-y-[2px]
+              "
+            >
+              <img
+                src="/Avatar.png"
+                alt="Profile"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                "
+              />
+            </div>
+          </div>
         <div>
             <div className="flex items-center gap-2.5">
               <h1
