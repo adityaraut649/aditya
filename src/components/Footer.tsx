@@ -6,7 +6,10 @@ export default function Footer() {
           { label: "home", href: "#" },
           { label: "resume", href: "/resume.pdf" },
           { label: "github", href: "https://github.com/adityaraut649" },
-          { label: "linkedin", href: "https://www.linkedin.com/in/aditya-raut-%E2%9A%A1-6b7988215/" },
+          {
+            label: "linkedin",
+            href: "https://www.linkedin.com/in/aditya-raut-%E2%9A%A1-6b7988215/",
+          },
           { label: "twitter", href: "https://x.com/A9449Raut" },
           { label: "dev.to", href: "https://dev.to/adityaraut649" },
         ].map((link) => (
@@ -14,7 +17,9 @@ export default function Footer() {
             key={link.label}
             href={link.href}
             target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            rel={
+              link.href.startsWith("http") ? "noopener noreferrer" : undefined
+            }
             className="hover:text-[#888] transition-colors"
           >
             {link.label}

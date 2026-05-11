@@ -1,9 +1,22 @@
 import {
-  SiJavascript, SiTypescript, SiPython, SiCplusplus,
-  SiHtml5, SiReact, SiNodedotjs, SiExpress,
-  SiSpring, SiGit, SiGithub, SiDocker, SiLinux,
-  SiPostgresql, SiMongodb, SiPostman,
-  SiOpenjdk, SiMysql,
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiCplusplus,
+  SiHtml5,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiSpring,
+  SiGit,
+  SiGithub,
+  SiDocker,
+  SiLinux,
+  SiPostgresql,
+  SiMongodb,
+  SiPostman,
+  SiOpenjdk,
+  SiMysql,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -51,15 +64,17 @@ export default function SkillsSection() {
   return (
     <section className="mt-10">
       <p
-  className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
-  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
->
-  Stack
-</p>
+        className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
+        style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+      >
+        Stack
+      </p>
       <div className="space-y-5">
         {stack.map((group) => (
           <div key={group.category}>
-            <p className="text-[#444] text-xs mb-2.5 font-medium">{group.category}</p>
+            <p className="text-[#444] text-xs mb-2.5 font-medium">
+              {group.category}
+            </p>
             <div className="flex flex-wrap gap-2">
               {group.items.map(({ label, Icon }) => (
                 <span

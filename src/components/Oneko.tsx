@@ -87,8 +87,9 @@ type SpriteKey = keyof typeof spriteSets;
 
 export default function Oneko() {
   useEffect(() => {
-    const isReducedMotion =
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     if (isReducedMotion) return;
 
@@ -151,14 +152,11 @@ export default function Oneko() {
         if (nekoPosX < 32) available.push("scratchWallW");
         if (nekoPosY < 32) available.push("scratchWallN");
 
-        if (nekoPosX > window.innerWidth - 32)
-          available.push("scratchWallE");
+        if (nekoPosX > window.innerWidth - 32) available.push("scratchWallE");
 
-        if (nekoPosY > window.innerHeight - 32)
-          available.push("scratchWallS");
+        if (nekoPosY > window.innerHeight - 32) available.push("scratchWallS");
 
-        idleAnimation =
-          available[Math.floor(Math.random() * available.length)];
+        idleAnimation = available[Math.floor(Math.random() * available.length)];
       }
 
       switch (idleAnimation) {
@@ -242,15 +240,9 @@ export default function Oneko() {
       nekoPosX -= (diffX / distance) * nekoSpeed;
       nekoPosY -= (diffY / distance) * nekoSpeed;
 
-      nekoPosX = Math.min(
-        Math.max(16, nekoPosX),
-        window.innerWidth - 16
-      );
+      nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
 
-      nekoPosY = Math.min(
-        Math.max(16, nekoPosY),
-        window.innerHeight - 16
-      );
+      nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
       nekoEl.style.left = `${nekoPosX - 16}px`;
       nekoEl.style.top = `${nekoPosY - 16}px`;

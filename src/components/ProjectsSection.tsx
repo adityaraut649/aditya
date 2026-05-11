@@ -22,7 +22,8 @@ const projects = [
   },
   {
     title: "Exness Clone",
-    subtitle: "CFD trading platform with live charting and real-time price feeds.",
+    subtitle:
+      "CFD trading platform with live charting and real-time price feeds.",
     description:
       "A pixel-accurate clone of the Exness CFD trading platform with live chart rendering, order management, and real-time price feeds.",
     features: [
@@ -37,7 +38,8 @@ const projects = [
   },
   {
     title: "Second Brain",
-    subtitle: "Knowledge management app for organizing ideas and resources in one place.",
+    subtitle:
+      "Knowledge management app for organizing ideas and resources in one place.",
     description:
       "A minimal, second-brain style app for organizing ideas, resources, and learning materials in one place.",
     features: [

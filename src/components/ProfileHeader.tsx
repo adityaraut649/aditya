@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function ProfileHeader() {
   const [copied, setCopied] = useState(false);
 
@@ -13,13 +15,13 @@ export default function ProfileHeader() {
     <div className="flex items-start justify-between pt-2">
       <div className="flex items-center gap-4">
         {/* Avatar placeholder — initials */}
-          <div className="relative shrink-0 group">
-            {/* Thunder Aura */}
-            <div className="absolute inset-0 rounded-full thunder-aura" />
+        <div className="relative shrink-0 group">
+          {/* Thunder Aura */}
+          <div className="absolute inset-0 rounded-full thunder-aura" />
 
-            {/* Avatar */}
-            <div
-              className="
+          {/* Avatar */}
+          <div
+            className="
                 relative
                 w-24
                 h-24
@@ -33,56 +35,56 @@ export default function ProfileHeader() {
                 group-hover:scale-[1.02]
                 group-hover:-translate-y-[2px]
               "
-            >
-              <img
-                src="/Avatar.png"
-                alt="Profile"
-                className="
+          >
+            <img
+              src="/Avatar.png"
+              alt="Profile"
+              className="
                   w-full
                   h-full
                   object-cover
                 "
-              />
-            </div>
+            />
           </div>
+        </div>
         <div>
-            <div className="flex items-center gap-2.5">
-              <h1
-                className="text-[#e8e8e8] text-4xl tracking-[0.01em] leading-tight"
-                style={{ fontFamily: '"Instrument Serif", serif' }}
-              >
-                Aditya Rajendera Raut
-              </h1>
+          <div className="flex items-center gap-2.5">
+            <h1
+              className="text-[#e8e8e8] text-4xl tracking-[0.01em] leading-tight"
+              style={{ fontFamily: '"Instrument Serif", serif' }}
+            >
+              Aditya Rajendera Raut
+            </h1>
 
-              <BadgeCheck
-                size={24}
-                strokeWidth={2.2}
-                className="fill-[#1d9bf0] text-black mt-1"
-              />
-            </div>
-
-            <p className="text-[#666] text-base mt-0.5">
-              I build things ·{" "}
-              <button
-                onClick={copyEmail}
-                className="text-[#666] hover:text-[#999] transition-colors cursor-pointer"
-                title="Copy email"
-              >
-                vraut3468@gmail.com
-              </button>{" "}
-              <span
-                onClick={copyEmail}
-                className="inline-block cursor-pointer hover:text-[#999] transition-colors text-[#444]"
-                title={copied ? "Copied!" : "Copy email"}
-              >
-                {copied ? "✓" : "⎘"}
-              </span>
-            </p>
-
-            <p className="text-[#555] text-base mt-1">
-              22 · engineer · developer · builder
-            </p>
+            <BadgeCheck
+              size={24}
+              strokeWidth={2.2}
+              className="fill-[#1d9bf0] text-black mt-1"
+            />
           </div>
+
+          <p className="text-[#666] text-base mt-0.5">
+            I build things ·{" "}
+            <button
+              onClick={copyEmail}
+              className="text-[#666] hover:text-[#999] transition-colors cursor-pointer"
+              title="Copy email"
+            >
+              vraut3468@gmail.com
+            </button>{" "}
+            <span
+              onClick={copyEmail}
+              className="inline-block cursor-pointer hover:text-[#999] transition-colors text-[#444]"
+              title={copied ? "Copied!" : "Copy email"}
+            >
+              {copied ? "✓" : "⎘"}
+            </span>
+          </p>
+
+          <p className="text-[#555] text-base mt-1">
+            22 · engineer · developer · builder
+          </p>
+        </div>
       </div>
 
       {/* Links icon row */}
@@ -120,15 +122,13 @@ export default function ProfileHeader() {
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
           </svg>
         </a>
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/resume"
           className="text-[#444] hover:text-[#888] transition-colors text-xs border border-[#2a2a2a] px-2 py-1 rounded hover:border-[#3a3a3a]"
           title="Resume"
         >
           CV
-        </a>
+        </Link>
       </div>
     </div>
   );

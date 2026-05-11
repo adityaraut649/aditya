@@ -41,11 +41,11 @@ export default function ElsewhereSection() {
   return (
     <section className="mt-10">
       <p
-  className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
-  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
->
-  Let's connect
-</p>
+        className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
+        style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+      >
+        Let's connect
+      </p>
       <div className="grid grid-cols-2 border border-[#222] rounded-xl overflow-hidden ">
         {links.map(({ label, href, username, Icon }, idx) => (
           <a

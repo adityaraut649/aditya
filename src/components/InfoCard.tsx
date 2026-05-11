@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LuBriefcase, LuCode, LuMapPin, LuClock, LuMail, LuGlobe } from "react-icons/lu";
+import {
+  LuBriefcase,
+  LuCode,
+  LuMapPin,
+  LuClock,
+  LuMail,
+  LuGlobe,
+} from "react-icons/lu";
 
 function LiveClock() {
   const [time, setTime] = useState("");
@@ -24,7 +31,8 @@ function LiveClock() {
 
   return (
     <span>
-      <span className="font-semibold text-[#e8e8e8]">{time}</span> IST (UTC+5:30)
+      <span className="font-semibold text-[#e8e8e8]">{time}</span> IST
+      (UTC+5:30)
     </span>
   );
 }

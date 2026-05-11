@@ -28,7 +28,21 @@ const education: Institution[] = [
           "Focused on embedded systems, signal processing, and software development.",
           "Completed coursework in core ECE subjects and engineering fundamentals.",
         ],
-        tags: ["DSA", "OS", "Networks", "DBMS", "Software Engineering", "Embedded Systems", "C++", "Python" , "Java", "Matlab" , "Machine Learning" , "Object-Oriented Programming", "Distributed Systems"],
+        tags: [
+          "DSA",
+          "OS",
+          "Networks",
+          "DBMS",
+          "Software Engineering",
+          "Embedded Systems",
+          "C++",
+          "Python",
+          "Java",
+          "Matlab",
+          "Machine Learning",
+          "Object-Oriented Programming",
+          "Distributed Systems",
+        ],
       },
     ],
   },
@@ -45,7 +59,9 @@ function DegreeCard({ degree, period, bullets, tags }: Degree) {
       >
         <LuGraduationCap size={15} className="text-[#555] flex-shrink-0" />
         <div className="flex-1 min-w-0">
-          <p className="text-[#e8e8e8] text-sm font-medium text-[15px] italic">{degree}</p>
+          <p className="text-[#e8e8e8] text-sm font-medium text-[15px] italic">
+            {degree}
+          </p>
           <p className="text-[#555] text-xs mt-0.5">{period}</p>
         </div>
         {open ? (
@@ -59,7 +75,10 @@ function DegreeCard({ degree, period, bullets, tags }: Degree) {
         <div className="px-4 pb-4 border-t border-[#1e1e1e]">
           <ul className="mt-3 space-y-1.5">
             {bullets.map((b, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-[#888]">
+              <li
+                key={i}
+                className="flex items-start gap-2 text-xs text-[#888]"
+              >
                 <span className="text-[#444] mt-0.5 flex-shrink-0">•</span>
                 <span className="leading-relaxed">{b}</span>
               </li>
@@ -85,11 +104,11 @@ export default function EducationSection() {
   return (
     <section className="mt-10">
       <p
-  className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
-  style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
->
-  Education
-</p>
+        className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
+        style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
+      >
+        Education
+      </p>
       <div className="space-y-5">
         {education.map((inst) => (
           <div key={inst.name}>

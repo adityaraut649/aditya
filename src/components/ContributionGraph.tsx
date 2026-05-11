@@ -7,10 +7,20 @@ const GITHUB_USER = "adityaraut649";
 
 const COLORS = ["#161b22", "#0d2d56", "#1a5a9a", "#2281d4", "#58b0f7"] as const;
 
-const DAY_NAMES  = ["", "Mon", "", "Wed", "", "Fri", ""] as const;
+const DAY_NAMES = ["", "Mon", "", "Wed", "", "Fri", ""] as const;
 const MONTH_NAMES = [
-  "Jan","Feb","Mar","Apr","May","Jun",
-  "Jul","Aug","Sep","Oct","Nov","Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ] as const;
 
 // ── types ─────────────────────────────────────────────────────────────────────
@@ -19,9 +29,17 @@ interface RawDay {
   count: number;
   level: 0 | 1 | 2 | 3 | 4;
 }
-interface Day extends RawDay { empty?: boolean }
-interface ApiResponse { contributions: RawDay[]; total: Record<string, number> }
-interface MonthLabel  { weekIndex: number; label: string }
+interface Day extends RawDay {
+  empty?: boolean;
+}
+interface ApiResponse {
+  contributions: RawDay[];
+  total: Record<string, number>;
+}
+interface MonthLabel {
+  weekIndex: number;
+  label: string;
+}
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 function buildWeeks(contributions: RawDay[]): Day[][] {
@@ -30,9 +48,9 @@ function buildWeeks(contributions: RawDay[]): Day[][] {
   contributions.forEach((d) => (map[d.date] = d));
 
   const start = new Date(contributions[0].date);
-  const end   = new Date(contributions[contributions.length - 1].date);
-  const cur   = new Date(start);
-  cur.setDate(cur.getDate() - cur.getDay());        // rewind to Sunday
+  const end = new Date(contributions[contributions.length - 1].date);
+  const cur = new Date(start);
+  cur.setDate(cur.getDate() - cur.getDay()); // rewind to Sunday
 
   const days: Day[] = [];
   while (cur <= end) {
@@ -63,11 +81,15 @@ function getMonthLabels(weeks: Day[][]): MonthLabel[] {
 
 // ── component ─────────────────────────────────────────────────────────────────
 export default function ContributionGraph() {
-  const [weeks,   setWeeks]   = useState<Day[][]>([]);
-  const [total,   setTotal]   = useState(0);
+  const [weeks, setWeeks] = useState<Day[][]>([]);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [error,   setError]   = useState<string | null>(null);
-  const [tooltip, setTooltip] = useState<{ text: string; x: number; y: number } | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [tooltip, setTooltip] = useState<{
+    text: string;
+    x: number;
+    y: number;
+  } | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,7 +98,7 @@ export default function ContributionGraph() {
       setError(null);
       try {
         const res = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`
+          `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`,
         );
         if (!res.ok) throw new Error("User not found");
         const data: ApiResponse = await res.json();
@@ -92,8 +114,8 @@ export default function ContributionGraph() {
 
   const monthLabels = getMonthLabels(weeks);
   const CELL = 11;
-  const GAP  = 3;
-  const COL  = CELL + GAP;
+  const GAP = 3;
+  const COL = CELL + GAP;
 
   return (
     // width:100% fills whatever column/card it sits in
@@ -109,7 +131,14 @@ export default function ContributionGraph() {
       }}
     >
       {loading && (
-        <p style={{ fontSize: 13, color: "#7d8590", padding: "32px 0", textAlign: "center" }}>
+        <p
+          style={{
+            fontSize: 13,
+            color: "#7d8590",
+            padding: "32px 0",
+            textAlign: "center",
+          }}
+        >
           Loading contributions…
         </p>
       )}
@@ -121,7 +150,6 @@ export default function ContributionGraph() {
         // overflow-x:auto scrolls horizontally on narrow screens instead of overflowing
         <div style={{ width: "100%", overflowX: "auto" }}>
           <div style={{ display: "inline-block", minWidth: "max-content" }}>
-
             {/* month labels */}
             <div style={{ display: "flex", marginBottom: 4, marginLeft: 34 }}>
               {(() => {
@@ -140,7 +168,7 @@ export default function ContributionGraph() {
                       }}
                     >
                       {ml.label}
-                    </span>
+                    </span>,
                   );
                   prev = ml.weekIndex;
                 });
@@ -151,7 +179,14 @@ export default function ContributionGraph() {
             {/* day labels + week grid */}
             <div style={{ display: "flex" }}>
               {/* weekday labels */}
-              <div style={{ display: "flex", flexDirection: "column", gap: GAP, marginRight: 6 }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: GAP,
+                  marginRight: 6,
+                }}
+              >
                 {DAY_NAMES.map((name, i) => (
                   <div
                     key={i}
@@ -172,10 +207,20 @@ export default function ContributionGraph() {
               {/* weeks */}
               <div style={{ display: "flex", gap: GAP }}>
                 {weeks.map((week, wi) => (
-                  <div key={wi} style={{ display: "flex", flexDirection: "column", gap: GAP }}>
+                  <div
+                    key={wi}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: GAP,
+                    }}
+                  >
                     {Array.from({ length: 7 }).map((_, di) => {
                       const day = week[di];
-                      const bg  = !day || day.empty ? "#0d1117" : COLORS[Math.min(day.level, 4)];
+                      const bg =
+                        !day || day.empty
+                          ? "#0d1117"
+                          : COLORS[Math.min(day.level, 4)];
                       return (
                         <div
                           key={di}
@@ -188,20 +233,30 @@ export default function ContributionGraph() {
                           }}
                           onMouseEnter={(e) => {
                             if (!day || day.empty) return;
-                            const cnt  = day.count;
-                            const date = new Date(day.date).toLocaleDateString("en-US", {
-                              month: "short", day: "numeric", year: "numeric",
-                            });
+                            const cnt = day.count;
+                            const date = new Date(day.date).toLocaleDateString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                              },
+                            );
                             setTooltip({
-                              text: cnt === 0
-                                ? `No contributions on ${date}`
-                                : `${cnt} contribution${cnt !== 1 ? "s" : ""} on ${date}`,
+                              text:
+                                cnt === 0
+                                  ? `No contributions on ${date}`
+                                  : `${cnt} contribution${cnt !== 1 ? "s" : ""} on ${date}`,
                               x: e.clientX + 12,
                               y: e.clientY - 34,
                             });
                           }}
                           onMouseMove={(e) =>
-                            setTooltip((t) => t ? { ...t, x: e.clientX + 12, y: e.clientY - 34 } : t)
+                            setTooltip((t) =>
+                              t
+                                ? { ...t, x: e.clientX + 12, y: e.clientY - 34 }
+                                : t,
+                            )
                           }
                           onMouseLeave={() => setTooltip(null)}
                         />
@@ -226,20 +281,39 @@ export default function ContributionGraph() {
                 href={`https://github.com/${GITHUB_USER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontSize: 12, color: "#7d8590", textDecoration: "none" }}
+                style={{
+                  fontSize: 12,
+                  color: "#7d8590",
+                  textDecoration: "none",
+                }}
               >
                 {total.toLocaleString()} contributions in the last year
               </a>
 
-              <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 11, color: "#7d8590" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 4,
+                  fontSize: 11,
+                  color: "#7d8590",
+                }}
+              >
                 Less
                 {COLORS.map((c, i) => (
-                  <div key={i} style={{ width: CELL, height: CELL, borderRadius: 2, background: c }} />
+                  <div
+                    key={i}
+                    style={{
+                      width: CELL,
+                      height: CELL,
+                      borderRadius: 2,
+                      background: c,
+                    }}
+                  />
                 ))}
                 More
               </div>
             </div>
-
           </div>
         </div>
       )}
