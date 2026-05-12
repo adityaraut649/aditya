@@ -3,7 +3,8 @@
 import { Link } from "react-router-dom";
 
 const DRIVE_PREVIEW_URL =
-  "https://drive.google.com/file/d/1qHjLNkTD72G3EBmlEKhtq6DsxDuDe2lO/preview";
+  "https://drive.google.com/file/d/1KcQDmrq0Arfzsa_etLZjpWA8eu2HfVTU/preview";
+  
 
 const YOUR_NAME = "Aditya Raut"; // Replace with your own name
 
