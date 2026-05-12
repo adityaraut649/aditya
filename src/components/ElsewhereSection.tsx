@@ -46,7 +46,7 @@ export default function ElsewhereSection() {
       >
         Let's connect
       </p>
-      <div className="grid grid-cols-2 border border-[#222] rounded-xl overflow-hidden ">
+      <div className="grid grid-cols-2 border border-[#222] rounded-lg overflow-hidden ">
         {links.map(({ label, href, username, Icon }, idx) => (
           <a
             key={label}

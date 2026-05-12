@@ -79,7 +79,7 @@ export default function SkillsSection() {
               {group.items.map(({ label, Icon }) => (
                 <span
                   key={label}
-                  className="flex items-center gap-1.5 text-[#aaa] text-xs bg-[#1a1a1a] border border-[#252525] px-3 py-1.5 rounded-full hover:border-[#333] hover:text-[#ccc] transition-colors duration-150"
+                  className="flex items-center gap-1.5 text-[#aaa] text-xs bg-[#1a1a1a] border border-[#252525] px-3 py-1.5 rounded-md hover:border-[#333] hover:text-[#ccc] transition-colors duration-150"
                 >
                   {Icon && <Icon size={12} className="flex-shrink-0" />}
                   {label}

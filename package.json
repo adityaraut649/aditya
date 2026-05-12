@@ -11,6 +11,7 @@
   "dependencies": {
     "clsx": "2.1.1",
     "lucide-react": "^1.14.0",
+    "qrcode.react": "^4.2.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-github-calendar": "^5.0.6",

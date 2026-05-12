@@ -16,114 +16,143 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <>
-      {/* Top Border */}
-      <div className="w-full h-px border-t  rounded-sm border-solid border-white/10 mt-10" />
-
+    <div className="max-w-[690px] mx-auto mt-10">
+      {/* Main Container */}
+      <div
+  className="
+    overflow-hidden
+    rounded-[12px]
+    border
+    border-white/10
+    bg-[#111111]
+  "
+>
+  {experiences.map((exp, index) => (
+    <div key={index}>
       <div
         className="
-          relative
-          max-w-[690px]
-          mx-auto
-          border-l
-          border-r
-          border-solid
-          border-white/10
+          group
+          px-4
+          py-3
+          transition-all
+          duration-300
+          hover:bg-white/[0.02]
         "
       >
-        <div className="border-t border-solid border-white/10" />
-
-        {/* Items */}
-        {experiences.map((exp, index) => (
-          <div key={index}>
-            <div className="p-3 hover:bg-white/[0.02] transition">
-              <div className="flex justify-between gap-4">
-                {/* Left */}
-                <div className="flex gap-3">
-                  <div className="w-12 h-12 rounded-[10px] border border-white/10 p-[2px] bg-[#0b0b0b]">
-                    <img
-                      src={exp.image}
-                      alt={exp.company}
-                      className="w-full h-full rounded-[8px] object-cover"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-white font-semibold text-[1.15rem]">
-                        {exp.company}
-                      </h3>
-
-                      {exp.badge && (
-                        <span className="text-xs border border-white/10 rounded px-1 text-zinc-400">
-                          {exp.badge}
-                        </span>
-                      )}
-                    </div>
-
-                    <p className="text-sm text-zinc-500">{exp.role}</p>
-                  </div>
-                </div>
-
-                {/* Right */}
-                <div className="text-right">
-                  <p className="text-white text-sm font-medium">
-                    {exp.duration}
-                  </p>
-
-                  <p className="text-zinc-500 text-sm">{exp.location}</p>
-                </div>
-              </div>
-            </div>
-
-            {index !== experiences.length - 1 && (
-              <div className="border-t border-solid border-white/10" />
-            )}
-          </div>
-        ))}
-
-        {/* Bottom Border */}
-        <div className="border-t border-solid border-white/10" />
-
-        {/* Button */}
-        <div className="p-3 flex justify-center">
-          <Link
-            to="/experience"
-            className="
-              group
-              border
-              border-white/15
-              rounded-[10px]
-              p-[2px]
-            "
-          >
+        <div className="flex items-center justify-between gap-4">
+          {/* Left */}
+          <div className="flex items-center gap-3 min-w-0">
+            {/* Logo */}
             <div
               className="
-                px-3
-                py-1
-                rounded-[8px]
+                w-11
+                h-11
+                rounded-[12px]
+                overflow-hidden
                 border
                 border-white/10
-                bg-white
-                text-black
-                flex
-                items-center
-                gap-1
-                text-[0.95rem]
-                font-medium
+                bg-[#111111]
+                shrink-0
               "
             >
-              View All
-              <ArrowUpRight
-                size={16}
-                className="group-hover:scale-125 transition"
+              <img
+                src={exp.image}
+                alt={exp.company}
+                className="w-full h-full object-cover"
               />
             </div>
-          </Link>
-        </div>
 
-        <div className="border-t border-solid border-white/10" />
+            {/* Content */}
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <h3
+                  className="
+                    text-white
+                    text-[15px]
+                    font-medium
+                    tracking-[-0.02em]
+                  "
+                >
+                  {exp.company}
+                </h3>
+
+                {exp.badge && (
+                  <span
+                    className="
+                      text-[10px]
+                      px-1.5
+                      py-[2px]
+                      rounded-[12px]
+                      border
+                      border-white/10
+                      text-zinc-500
+                      bg-white/[0.02]
+                    "
+                  >
+                    {exp.badge}
+                  </span>
+                )}
+              </div>
+
+              <p className="text-[13px] text-zinc-500 mt-[1px]">
+                {exp.role}
+              </p>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div className="text-right shrink-0">
+            <p className="text-[13px] text-zinc-300">
+              {exp.duration}
+            </p>
+
+            <p className="text-[12px] text-zinc-600 mt-[1px]">
+              {exp.location}
+            </p>
+          </div>
+        </div>
       </div>
-    </>
-  );
+
+      {index !== experiences.length - 1 && (
+        <div className="border-t border-white/10" />
+      )}
+    </div>
+  ))}
+
+  {/* Footer */}
+  <div className="border-t border-white/10 p-3 flex justify-center">
+    <Link
+      to="/experience"
+      className="
+        group
+        flex
+        items-center
+        gap-1
+        rounded-[12px]
+        border
+        border-white/10
+        px-3
+        py-1.5
+        text-sm
+        text-white
+        hover:bg-white/[0.03]
+        transition-all
+      "
+    >
+      View All
+
+      <ArrowUpRight
+        size={14}
+        className="
+          transition-transform
+          duration-300
+          group-hover:-translate-y-[1px]
+          group-hover:translate-x-[1px]
+        "
+      />
+    </Link>
+  </div>
+  </div>
+    </div>
+  )
 }
