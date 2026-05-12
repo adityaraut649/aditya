@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Avatar } from "./Avatar";
 
 export default function ProfileHeader() {
   const [copied, setCopied] = useState(false);
@@ -15,38 +16,7 @@ export default function ProfileHeader() {
     <div className="flex items-start justify-between pt-2">
       <div className="flex items-center gap-4">
         {/* Avatar placeholder — initials */}
-        <div className="relative shrink-0 group">
-          {/* Thunder Aura */}
-          <div className="absolute inset-0 rounded-full thunder-aura" />
-
-          {/* Avatar */}
-          <div
-            className="
-                relative
-                w-24
-                h-24
-                rounded-full
-                overflow-hidden
-                border
-                border-white/10
-                bg-[#111]
-                transition-all
-                duration-500
-                group-hover:scale-[1.02]
-                group-hover:-translate-y-[2px]
-              "
-          >
-            <img
-              src="/Avatar.png"
-              alt="Profile"
-              className="
-                  w-full
-                  h-full
-                  object-cover
-                "
-            />
-          </div>
-        </div>
+        <Avatar />
         <div>
           <div className="flex items-center gap-2.5">
             <h1
