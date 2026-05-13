@@ -27,8 +27,8 @@ export default function ProfileHeader() {
             </h1>
 
             <BadgeCheck
-              size={24}
-              strokeWidth={2.2}
+              size={28}
+              strokeWidth={2.5}
               className="fill-[#1d9bf0] text-black mt-1"
             />
           </div>

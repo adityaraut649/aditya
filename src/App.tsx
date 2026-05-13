@@ -151,7 +151,7 @@ function Home() {
                 fontWeight: 400,
               }}
             >
-              Contributions
+              Contributions 
             </p>
             <ContributionGraph />
           </section>

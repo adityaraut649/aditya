@@ -113,8 +113,8 @@ export default function ContributionGraph() {
   }, []);
 
   const monthLabels = getMonthLabels(weeks);
-  const CELL = 11;
-  const GAP = 3;
+  const CELL = 9;
+  const GAP = 2;
   const COL = CELL + GAP;
 
   return (
@@ -124,7 +124,7 @@ export default function ContributionGraph() {
         width: "100%",
         background: "#111",
         borderRadius: 10,
-        padding: "20px 20px 16px",
+        padding: "12px",
         fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
         color: "#8b949e",
         boxSizing: "border-box",
@@ -151,7 +151,7 @@ export default function ContributionGraph() {
         <div style={{ width: "100%", overflowX: "auto" }}>
           <div style={{ display: "inline-block", minWidth: "max-content" }}>
             {/* month labels */}
-            <div style={{ display: "flex", marginBottom: 4, marginLeft: 34 }}>
+            <div style={{ display: "flex", marginBottom: 4, marginLeft: 24 }}>
               {(() => {
                 const items: React.ReactNode[] = [];
                 let prev = 0;
