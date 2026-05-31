@@ -19,19 +19,42 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#111111] text-white">
       <Oneko />
-      <div className="min-h-screen bg-[#111111] text-[#e8e8e8] font-sans">
-        {/* Mountain Hero Banner */}
-        <div className="relative w-full h-48 md:h-64 overflow-hidden">
-          <img
-            src="/mountain-bg.jpg"
-            alt="Mountain landscape"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111]/30 to-[#111111]" />
-        </div>
+      <div className="rel min-h-screen bg-[#111111] text-[#e8e8e8] font-sans">
+        {/* Left dotted line */}
+        <div
+          className="fixed top-0 bottom-0 left-1/2 -translate-x-[336px] w-0 border-r border-white/[.75] pointer-events-none hidden md:block"
+          style={{
+            maskImage:
+              "repeating-linear-gradient(black 0px, black 1px, transparent 1px, transparent 6px)",
+          }}
+        />
+
+        {/* Right dotted line */}
+        <div
+          className="fixed top-0 bottom-0 left-1/2 translate-x-[336px] w-0 border-r border-white/[.75] pointer-events-none hidden md:block"
+          style={{
+            maskImage:
+              "repeating-linear-gradient(black 0px, black 1px, transparent 1px, transparent 6px)",
+          }}
+        />
 
         {/* Main Content */}
         <div className="max-w-2xl mx-auto px-5 pb-16 -mt-6 relative z-10">
+          {/* Mountain Hero Banner */}
+          <div className="relative w-full h-48 md:h-64 overflow-hidden">
+            <img
+              src="/mountain-bg.jpg"
+              alt="Mountain landscape"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Bottom fade */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111]/30 to-[#111111]" />
+            {/* Left fade */}
+            <div className="absolute inset-y-0 left-0 w-0 bg-gradient-to-r from-[#111111] to-transparent" />
+            {/* Right fade */}
+            <div className="absolute inset-y-0 right-0 w-0 bg-gradient-to-l from-[#111111] to-transparent" />
+          </div>
+
           <ProfileHeader />
 
           <div className="mt-10">
@@ -48,7 +71,7 @@ function Home() {
             <InfoCard />
           </div>
           <div className="border-t border-[#2a2a2a] my-8"></div>
-          
+
           {/* About */}
           <section className="mt-10">
             <p
@@ -151,7 +174,7 @@ function Home() {
                 fontWeight: 400,
               }}
             >
-              Contributions 
+              Contributions
             </p>
             <ContributionGraph />
           </section>
