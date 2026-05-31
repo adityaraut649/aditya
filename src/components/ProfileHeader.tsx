@@ -57,8 +57,8 @@ export default function ProfileHeader() {
             </span>
           </p>
 
-          <p className="text-[#555] text-base mt-1">
-            22 · engineer · developer · builder
+          <p className="text-2xl italic mt-1 font-sans shimmer-text" style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}>
+            22. Full Stack Developer
           </p>
         </div>
       </div>

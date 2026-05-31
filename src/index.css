@@ -263,3 +263,28 @@ html {
     @apply font-sans;
   }
 }
+
+
+
+.shimmer-text {
+  background: linear-gradient(110deg, #bfbfbf 35%, #000 50%, #bfbfbf 75%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  .shimmer-text {
+    background: linear-gradient(110deg, #404040 35%, #fff 50%, #404040 75%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
