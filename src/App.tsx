@@ -23,20 +23,21 @@ function Home() {
       <div className="relative min-h-screen bg-[#111111] text-[#e8e8e8] font-sans">
         {/* Left dotted line */}
         <div
-          className="fixed top-0 bottom-0 left-1/2 -translate-x-[336px] w-0 border-r border-white/[.75] pointer-events-none hidden md:block"
-          style={{ maskImage: "repeating-linear-gradient(black 0px, black 1px, transparent 1px, transparent 6px)" }}
-        />
-        {/* Right dotted line */}
+            className="fixed top-0 bottom-0 left-1/2 -translate-x-[336px] w-0 pointer-events-none hidden md:block"
+            style={{ borderRight: "1px dashed #737373", opacity: 0.4}}
+          />
+
+        {/* Right vertical dashed line */}
         <div
-          className="fixed top-0 bottom-0 left-1/2 translate-x-[336px] w-0 border-r border-white/[.75] pointer-events-none hidden md:block"
-          style={{ maskImage: "repeating-linear-gradient(black 0px, black 1px, transparent 1px, transparent 6px)" }}
+          className="fixed top-0 bottom-0 left-1/2 translate-x-[336px] w-0 pointer-events-none hidden md:block"
+          style={{ borderRight: "1px dashed #737373" , opacity: 0.4}}
         />
 
         {/* Main Content */}
-        <div className="max-w-2xl mx-auto px-4 sm:px-5 pb-16 relative z-10">
+        <div className="max-w-2xl mx-auto px-3 sm:px-5 md:px-6 pb-16 relative z-10">
 
           {/* Mountain Hero Banner */}
-          <div className="relative w-full h-36 sm:h-48 md:h-64 overflow-hidden">
+          <div className="relative w-full h-28 xs:h-32 sm:h-48 md:h-64 overflow-hidden rounded-b-xl">
             <img
               src="/mountain-bg.jpg"
               alt="Mountain landscape"
@@ -48,7 +49,7 @@ function Home() {
           </div>
 
           <ProfileHeader />
-
+          
           <div className="mt-6 sm:mt-10">
             <SpotifyCard
               title="One Day"
