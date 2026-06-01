@@ -52,7 +52,7 @@ function DegreeCard({ degree, period, bullets, tags }: Degree) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-[#1e1e1e] rounded-lg overflow-hidden">
+    <div className="border border-dashed border-[#737373]/40 rounded-none overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#161616] transition-colors text-left"
@@ -88,7 +88,7 @@ function DegreeCard({ degree, period, bullets, tags }: Degree) {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[#666] text-xs bg-[#1a1a1a] border border-[#252525] px-2 py-0.5 rounded-md"
+                className="text-[#666] text-xs bg-[#1a1a1a] border border-[#252525] px-2 py-0.5 rounded-0"
               >
                 {tag}
               </span>

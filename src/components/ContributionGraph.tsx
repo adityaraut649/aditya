@@ -113,7 +113,7 @@ export default function ContributionGraph() {
   }, []);
 
   const monthLabels = getMonthLabels(weeks);
-  const CELL = 9;
+  const CELL = 8.5;
   const GAP = 2;
   const COL = CELL + GAP;
 
@@ -125,7 +125,7 @@ export default function ContributionGraph() {
         background: "#111",
         borderRadius: 10,
         padding: "12px",
-        fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+        fontFamily: "Inter, sans-serif",
         color: "#8b949e",
         boxSizing: "border-box",
       }}
