@@ -57,7 +57,7 @@ export default function ProfileHeader() {
             </span>
           </p>
 
-          <p className="text-2xl italic mt-1 font-sans shimmer-text" style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}>
+          <p className="text-zinc-400 mt-1 shimmer-text text-lg">
             22. Full Stack Developer
           </p>
         </div>
