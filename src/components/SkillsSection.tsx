@@ -1,93 +1,58 @@
-import {
-  SiJavascript,
-  SiTypescript,
-  SiPython,
-  SiCplusplus,
-  SiHtml5,
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiSpring,
-  SiGit,
-  SiGithub,
-  SiDocker,
-  SiLinux,
-  SiPostgresql,
-  SiMongodb,
-  SiPostman,
-  SiOpenjdk,
-  SiMysql,
-} from "react-icons/si";
-import { IconType } from "react-icons";
+// components/SkillsSection.tsx
+"use client";
 
-type Skill = { label: string; Icon?: IconType };
-type Category = { category: string; items: Skill[] };
-
-const stack: Category[] = [
-  {
-    category: "Languages",
-    items: [
-      { label: "JavaScript", Icon: SiJavascript },
-      { label: "TypeScript", Icon: SiTypescript },
-      { label: "Python", Icon: SiPython },
-      { label: "Java", Icon: SiOpenjdk },
-      { label: "C/C++", Icon: SiCplusplus },
-      { label: "SQL", Icon: SiMysql },
-      { label: "HTML & CSS", Icon: SiHtml5 },
-    ],
-  },
-  {
-    category: "Frameworks",
-    items: [
-      { label: "React", Icon: SiReact },
-      { label: "Node.js", Icon: SiNodedotjs },
-      { label: "Express", Icon: SiExpress },
-      { label: "Spring Boot", Icon: SiSpring },
-    ],
-  },
-  {
-    category: "Tools",
-    items: [
-      { label: "Git", Icon: SiGit },
-      { label: "GitHub", Icon: SiGithub },
-      { label: "Docker", Icon: SiDocker },
-      { label: "Linux", Icon: SiLinux },
-      { label: "PostgreSQL", Icon: SiPostgresql },
-      { label: "MongoDB", Icon: SiMongodb },
-      { label: "Postman", Icon: SiPostman },
-      { label: "REST APIs" },
-    ],
-  },
+const items = [
+  { label: "Java", src: "/tech-icons/java.svg" },
+  { label: "JavaScript", src: "/tech-icons/javascript.svg" },
+  { label: "TypeScript", src: "/tech-icons/typescript.svg" },
+  { label: "React", src: "/tech-icons/react.svg" },
+  { label: "Next.js", src: "/tech-icons/nextjs.svg" },
+  { label: "Node.js", src: "/tech-icons/nodejs.svg" },
+  { label: "Express", src: "/tech-icons/express.svg" },
+  { label: "Python", src: "/tech-icons/python.svg" },
+  { label: "FastAPI", src: "/tech-icons/fastapi.svg" },
+  { label: "MongoDB", src: "/tech-icons/mongodb.svg" },
+  { label: "PostgreSQL", src: "/tech-icons/postgresql.svg" },
+  { label: "Redis", src: "/tech-icons/redis.svg" },
+  { label: "SQL", src: "/tech-icons/sql.svg" },
+  { label: "Docker", src: "/tech-icons/docker.svg" },
+  { label: "AWS", src: "/tech-icons/AWS.svg" },
+  { label: "Azure", src: "/tech-icons/Azure.svg" },
+  { label: "Git", src: "/tech-icons/Git.svg" },
+  { label: "Jira", src: "/tech-icons/Jira.svg" },
+  { label: "Tailwind CSS", src: "/tech-icons/tailwind.svg" },
 ];
 
 export default function SkillsSection() {
   return (
-    <section className="mt-10">
-      <p
-        className="text-[#f1f1f1] text-[25px] leading-none tracking-wide mb-5"
-        style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
-      >
-        Stack
+    <section className="mt-16">
+      <h2 className="text-[28px] font-semibold text-zinc-200">
+        Stack I use
+      </h2>
+
+      <p className="mt-2 text-sm text-zinc-500">
+        Technologies I work with to build products that solve real problems
       </p>
-      <div className="space-y-5">
-        {stack.map((group) => (
-          <div key={group.category}>
-            <p className="text-[#444] text-xs mb-2.5 font-medium">
-              {group.category}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {group.items.map(({ label, Icon }) => (
-                <span
-                  key={label}
-                  className="flex items-center gap-1.5 text-[#aaa] text-xs bg-[#1a1a1a] border border-[#252525] px-3 py-1.5 rounded-md hover:border-[#333] hover:text-[#ccc] transition-colors duration-150"
-                >
-                  {Icon && <Icon size={12} className="flex-shrink-0" />}
-                  {label}
-                </span>
-              ))}
+
+      <div className="relative mt-8 overflow-x-hidden">
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {[...items, ...items].map(({ label, src }, index) => (
+            <div
+              key={`${label}-${index}`}
+              className="mx-4 flex min-w-[100px] flex-col items-center justify-center transition-transform duration-300 hover:scale-110"
+            >
+              <img
+                src={src}
+                alt={label}
+                className="h-12 w-12 object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
+              />
+
+              <span className="mt-3 text-xs font-medium text-zinc-400">
+                {label}
+              </span>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
