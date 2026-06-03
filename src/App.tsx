@@ -14,7 +14,9 @@ import Oneko from "./components/Oneko";
 import ExperienceSection from "./components/Experience";
 import ResumePage from "./Page/ResumePage";
 import ExperiencePage from "./Page/ExperiencePage";
-
+import LastPlayed from "./components/LastPlayed";
+import GamingCard from "./components/GamingCardProps";
+import AboutSection from "./components/About";
 
 function Home() {
   return (
@@ -23,19 +25,18 @@ function Home() {
       <div className="relative min-h-screen bg-[#111111] text-[#e8e8e8] font-sans">
         {/* Left dotted line */}
         <div
-            className="fixed top-0 bottom-0 left-1/2 -translate-x-[336px] w-0 pointer-events-none hidden md:block"
-            style={{ borderRight: "1px dashed #737373", opacity: 0.4}}
-          />
+          className="fixed top-0 bottom-0 left-1/2 -translate-x-[336px] w-0 pointer-events-none hidden md:block"
+          style={{ borderRight: "1px dashed #737373", opacity: 0.4 }}
+        />
 
         {/* Right vertical dashed line */}
         <div
           className="fixed top-0 bottom-0 left-1/2 translate-x-[336px] w-0 pointer-events-none hidden md:block"
-          style={{ borderRight: "1px dashed #737373" , opacity: 0.4}}
+          style={{ borderRight: "1px dashed #737373", opacity: 0.4 }}
         />
 
         {/* Main Content */}
         <div className="max-w-2xl mx-auto px-3 sm:px-5 md:px-6 pb-16 relative z-10">
-
           {/* Mountain Hero Banner */}
           <div className="relative w-full h-28 xs:h-32 sm:h-48 md:h-64 overflow-hidden rounded-b-xl">
             <img
@@ -49,57 +50,49 @@ function Home() {
           </div>
 
           <ProfileHeader />
-          
+          <div className="mt-4 sm:mt-6">
+            <AboutSection />
+          </div>
           <div className="mt-6 sm:mt-10">
+            <LastPlayed />
+          </div>
+          <div className="mt-4 sm:mt-6">
+            <GamingCard
+              artUrl="https://cdn2.unrealengine.com/twd-header-1920x1080-5c1249d4b639.jpg"
+              logoUrl="https://www.shutterstock.com/image-vector/silhouette-walking-dead-logo-featuring-600w-2685969589.jpg"
+              logoAlt="The Walking Dead"
+              title="The Walking Dead"
+              href="https://store.epicgames.com/en-US/collection/the-walking-dead"
+              isActive={false}
+            />
+          </div>
+          
+
+          {/* <div className="mt-6 sm:mt-10">
             <SpotifyCard
               title="One Day"
               artist="Kodaline"
               albumImage="https://i.scdn.co/image/ab67616d0000485174b1285d420d4d8494c72df5"
               songUrl="https://open.spotify.com/track/1nqJvzF8URpip2qbg8izYb"
             />
-          </div>
+          </div> */}
 
-          <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
+          {/* <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
           <div className="mt-6 sm:mt-10">
             <InfoCard />
           </div>
-          <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
-
-          {/* About */}
-          <section className="mt-6 sm:mt-10">
-            <p className="text-[#f1f1f1] text-[22px] sm:text-[25px] leading-none tracking-wide mb-5"
-              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}>
-              About
-            </p>
-            <p className="text-[#999] text-sm leading-relaxed mb-3">
-              I Write Code, Break Things, Fix Them & Repeat —{" "}
-              <span className="text-[#f1f1f1] text-[15px] italic">Usually In That Order.</span>
-            </p>
-            <p className="text-[#999] text-sm leading-relaxed mb-3">
-              My background is in{" "}
-              <span className="text-[#f1f1f1] text-[15px] italic">Electronic & Telecommunications Engineering</span>
-              , but I've spent most of my time deep in software — writing backends, building interfaces, automating
-              things, and occasionally reading source code at midnight just to understand how something works.
-            </p>
-            <ul className="space-y-2 mt-3">
-              {[
-                <> Passionate about <span className="text-[#f1f1f1] text-[15px] italic">Open-Source</span> — It's been my playground and classroom for how real software is built collaboratively. </>,
-                <> Focused on building <span className="text-[#f1f1f1] text-[15px] italic">Tools, Systems, and Products</span> that are actually useful — not just impressive on paper. </>,
-                <> Experienced with <span className="text-[#f1f1f1] text-[15px] italic">Full-Stack Web Development</span> using React, Node.js, and Express, bridging heavy backend logic with fluid UI. </>,
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm text-[#999]">
-                  <span className="text-[#444] mt-1 flex-shrink-0">•</span>
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div> */}
 
           <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
 
           <section className="mt-6 sm:mt-10">
-            <p className="text-[#f1f1f1] text-[22px] sm:text-[25px] leading-none tracking-wide mb-5"
-              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}>
+            <p
+              className="text-[#f1f1f1] text-[22px] sm:text-[25px] leading-none tracking-wide mb-5"
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontWeight: 400,
+              }}
+            >
               Experience
             </p>
             <ExperienceSection />
@@ -116,8 +109,13 @@ function Home() {
           <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
 
           <section className="mt-6 sm:mt-10">
-            <p className="text-[#f1f1f1] text-[22px] sm:text-[25px] leading-none tracking-wide mb-5"
-              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}>
+            <p
+              className="text-[#f1f1f1] text-[22px] sm:text-[25px] leading-none tracking-wide mb-5"
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontWeight: 400,
+              }}
+            >
               Contributions
             </p>
             <ContributionGraph />

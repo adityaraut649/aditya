@@ -38,7 +38,7 @@ export default function Footer() {
 
   const dayOfYear = Math.floor(
     (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) /
-      86400000
+      86400000,
   );
 
   const quote = quotes[dayOfYear % quotes.length];
@@ -47,6 +47,20 @@ export default function Footer() {
     <footer className="mt-16 pt-6 border-t border-[#1a1a1a]">
       <div className="flex flex-col items-center justify-center py-20">
         <div className="max-w-[600px] px-6 text-center">
+          {/* Add SVG here */}
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="mx-auto mb-5 text-zinc-800"
+          >
+            <path
+              d="M10 11H6.5C6.5 7.5 8.5 5.5 12 5V7C10.2 7.4 9 8.5 9 10H10C11.1 10 12 10.9 12 12C12 13.1 11.1 14 10 14C8.9 14 8 13.1 8 12C8 11.4 8.2 10.9 8.5 10.5M18 11H14.5C14.5 7.5 16.5 5.5 20 5V7C18.2 7.4 17 8.5 17 10H18C19.1 10 20 10.9 20 12C20 13.1 19.1 14 18 14C16.9 14 16 13.1 16 12C16 11.4 16.2 10.9 16.5 10.5"
+              fill="currentColor"
+            />
+          </svg>
+
           <h3 className="text-[16px] md:text-[18px] font-medium leading-relaxed text-zinc-500 dark:text-zinc-400 italic">
             "{quote.text}"
           </h3>
