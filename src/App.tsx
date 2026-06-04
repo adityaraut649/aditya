@@ -8,8 +8,8 @@ import ElsewhereSection from "./components/ElsewhereSection";
 import EducationSection from "./components/EducationSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import InfoCard from "./components/InfoCard";
-import SpotifyCard from "./components/SpotifyCard";
+// import InfoCard from "./components/InfoCard";
+// import SpotifyCard from "./components/SpotifyCard";
 import Oneko from "./components/Oneko";
 import ExperienceSection from "./components/Experience";
 import ResumePage from "./Page/ResumePage";
@@ -53,6 +53,19 @@ function Home() {
           <div className="mt-4 sm:mt-6">
             <AboutSection />
           </div>
+
+          <div className="mt-6 sm:mt-10">
+            <div className="mb-5">
+              <p className="text-md text-zinc-500">
+                Here are my{" "}
+                <span className="font-medium text-zinc-100">socials</span>
+              </p>
+              <div className="sm:mt-2">
+                <ElsewhereSection />
+              </div>
+            </div>
+          </div>
+
           <div className="mt-6 sm:mt-10">
             <LastPlayed />
           </div>
@@ -66,7 +79,6 @@ function Home() {
               isActive={false}
             />
           </div>
-          
 
           {/* <div className="mt-6 sm:mt-10">
             <SpotifyCard
@@ -98,8 +110,7 @@ function Home() {
             <ExperienceSection />
           </section>
 
-          <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
-          <ElsewhereSection />
+          
           <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>
           <ProjectsSection />
           <div className="border-t border-[#2a2a2a] my-6 sm:my-8"></div>

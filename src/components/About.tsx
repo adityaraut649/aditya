@@ -1,11 +1,11 @@
 export default function AboutSection() {
   return (
     <section className="mt-6 sm:mt-10">
-      <div className="mt-6 space-y-2.5 text-[13px] leading-[1.7] text-[#999]">
+      <div className="mt-6 space-y-2.5 text-[15px] leading-[1.7] text-[#999]">
         <p className="flex gap-2.5">
-          <span className="select-none font-mono text-[11px] leading-[1.9] text-[#444]">
+          {/* <span className="select-none font-mono text-[11px] leading-[1.9] text-[#444]">
             01
-          </span>
+          </span> */}
           <span>
             I love to <span className="font-medium text-[#f1f1f1]">build</span>{" "}
             and <span className="font-medium text-[#f1f1f1]">learn</span>,
@@ -107,7 +107,7 @@ export default function AboutSection() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/skill relative inline-flex items-baseline gap-1.5 font-semibold text-[#f1f1f1] underline decoration-[#333] decoration-1 underline-offset-4 transition-colors hover:decoration-[#f1f1f1]"
+                  className="group/skill relative inline-flex items-baseline gap-1 font-semibold text-[#f1f1f1] underline decoration-[#333] decoration-1 underline-offset-4 transition-colors hover:decoration-[#f1f1f1]"
                 >
                   <span className="inline-block size-3 shrink-0 translate-y-0.5 opacity-60 transition-opacity group-hover/skill:opacity-100">
                     {icon}
@@ -126,12 +126,11 @@ export default function AboutSection() {
         </p>
 
         <p className="flex gap-2.5">
-          <span className="select-none font-mono text-[11px] leading-[1.9] text-[#444]">
+          {/* <span className="select-none font-mono text-[11px] leading-[1.9] text-[#444]">
             02
-          </span>
+          </span> */}
           <span>
-            Outside of code, I'm addicted to the gym — still trying to make my
-            commits as consistent as my workout split.
+            Outside of code, I spend my time gaming — leveling up in virtual worlds while leveling up my development skills in the real one.
           </span>
         </p>
       </div>

@@ -20,7 +20,7 @@ export default function GamingCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex h-[70px] w-full max-w-[430px] items-center overflow-hidden rounded-sm border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+      className="group relative flex h-[70px] w-full max-w-[430px] items-center overflow-hidden rounded-sm border border-zinc-900/80 bg-zinc-950/80 backdrop-blur-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_8px_24px_rgba(0,0,0,0.6)] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-white/5 before:content-['']"
     >
       {/* Background */}
       <img

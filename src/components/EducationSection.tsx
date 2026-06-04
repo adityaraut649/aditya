@@ -50,36 +50,36 @@ const education: Institution[] = [
 
 function DegreeCard({ degree, period, bullets, tags }: Degree) {
   const [open, setOpen] = useState(false);
-
   return (
-    <div className="border border-dashed border-[#737373]/40 rounded-none overflow-hidden">
+    <div className="rounded-[10px] border border-white/[0.08] bg-[#111] overflow-hidden hover:border-white/[0.13] transition-all">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#161616] transition-colors text-left"
+        className="w-full flex items-center justify-between gap-3 px-3.5 py-2.5 hover:bg-[#161616] transition-colors text-left"
       >
-        <LuGraduationCap size={15} className="text-[#555] flex-shrink-0" />
-        <div className="flex-1 min-w-0">
-          <p className="text-[#e8e8e8] text-sm font-medium text-[15px] italic">
-            {degree}
-          </p>
-          <p className="text-[#555] text-xs mt-0.5">{period}</p>
+        <div className="flex items-center gap-2.5 min-w-0">
+          <LuGraduationCap size={15} className="text-white/25 shrink-0" />
+          <div>
+            <p className="text-[13px] font-medium text-white/80 tracking-[-0.01em]">
+              {degree}
+            </p>
+            <p className="text-[11px] text-white/30 mt-px">{period}</p>
+          </div>
         </div>
-        {open ? (
-          <LuChevronUp size={14} className="text-[#444] flex-shrink-0" />
-        ) : (
-          <LuChevronDown size={14} className="text-[#444] flex-shrink-0" />
-        )}
+        <LuChevronDown
+          size={13}
+          className={`text-white/20 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
       </button>
 
       {open && (
-        <div className="px-4 pb-4 border-t border-[#1e1e1e]">
+        <div className="px-3.5 pb-3.5 border-t border-white/[0.06]">
           <ul className="mt-3 space-y-1.5">
             {bullets.map((b, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2 text-xs text-[#888]"
+                className="flex items-start gap-2 text-[12px] text-[#777]"
               >
-                <span className="text-[#444] mt-0.5 flex-shrink-0">•</span>
+                <span className="text-[#444] mt-0.5 shrink-0">•</span>
                 <span className="leading-relaxed">{b}</span>
               </li>
             ))}
@@ -88,7 +88,7 @@ function DegreeCard({ degree, period, bullets, tags }: Degree) {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[#666] text-xs bg-[#1a1a1a] border border-[#252525] px-2 py-0.5 rounded-0"
+                className="text-[10px] text-[#555] bg-[#1a1a1a] border border-white/[0.07] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -117,13 +117,12 @@ export default function EducationSection() {
                 src={inst.logo}
                 alt={inst.name}
                 className="w-7 h-7 rounded-full object-cover bg-[#1a1a1a]"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
               />
-              <p className="text-[#ccc] text-sm font-medium">{inst.name}</p>
+              <p className="text-[12px] font-medium text-[#888] uppercase tracking-wider">
+                {inst.name}
+              </p>
             </div>
-            <div className="space-y-2 ml-1">
+            <div className="flex flex-col gap-2">
               {inst.degrees.map((d) => (
                 <DegreeCard key={d.degree} {...d} />
               ))}

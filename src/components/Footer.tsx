@@ -61,7 +61,7 @@ export default function Footer() {
             />
           </svg>
 
-          <h3 className="text-[16px] md:text-[18px] font-medium leading-relaxed text-zinc-500 dark:text-zinc-400 italic">
+          <h3 className="text-[20px] md:text-[18px] font-medium leading-relaxed text-zinc-500 dark:text-zinc-400 italic">
             "{quote.text}"
           </h3>
 

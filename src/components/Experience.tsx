@@ -1,5 +1,4 @@
 "use client";
-
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -12,147 +11,72 @@ const experiences = [
     image: "./KodNest.jpg",
     badge: "Intern",
   },
+  {
+    company: "Personal Work",
+    role: "Freelance",
+    duration: "Nov, 2025 - Nov, 2025",
+    location: "Bangalore, India - Remote",
+    image: "./Freelance.jpg",
+    badge: "Freelance",
+  },
 ];
 
 export default function Experience() {
   return (
-    <div className="max-w-[690px] mx-auto mt-10">
-      {/* Main Container */}
-      <div
-  className="
-    overflow-hidden
-    rounded-[12px]
-    border
-    border-white/10
-    bg-[#111111]
-  "
->
-  {experiences.map((exp, index) => (
-    <div key={index}>
-      <div
-        className="
-          group
-          px-4
-          py-3
-          transition-all
-          duration-300
-          hover:bg-white/[0.02]
-        "
-      >
-        <div className="flex items-center justify-between gap-4">
-          {/* Left */}
-          <div className="flex items-center gap-3 min-w-0">
-            {/* Logo */}
-            <div
-              className="
-                w-11
-                h-11
-                rounded-[12px]
-                overflow-hidden
-                border
-                border-white/10
-                bg-[#111111]
-                shrink-0
-              "
-            >
-              <img
-                src={exp.image}
-                alt={exp.company}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <h3
-                  className="
-                    text-white
-                    text-[15px]
-                    font-medium
-                    tracking-[-0.02em]
-                  "
-                >
-                  {exp.company}
-                </h3>
-
-                {exp.badge && (
-                  <span
-                    className="
-                      text-[10px]
-                      px-1.5
-                      py-[2px]
-                      rounded-[12px]
-                      border
-                      border-white/10
-                      text-zinc-500
-                      bg-white/[0.02]
-                    "
-                  >
-                    {exp.badge}
-                  </span>
-                )}
+    <div className="mt-10">
+      <div className="flex flex-col gap-2 mb-2">
+        {experiences.map((exp, i) => (
+          <div
+            key={i}
+            className="
+                flex items-center justify-between gap-3
+                px-3.5 py-2.5
+                rounded-[10px]
+                border border-white/[0.08]
+                bg-[#111]
+                hover:bg-[#161616]
+                hover:border-white/[0.13]
+                transition-all
+                "
+          >
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-[8px] border border-white/[0.08] bg-[#1a1a1a] overflow-hidden shrink-0">
+                <img
+                  src={exp.image}
+                  alt={exp.company}
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <p className="text-[13px] text-zinc-500 mt-[1px]">
-                {exp.role}
-              </p>
+              <div>
+                <p className="text-[13px] font-medium text-white/80 tracking-[-0.01em]">
+                  {exp.company}
+                </p>
+                <p className="text-[11px] text-white/30 mt-px">{exp.role}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              {exp.badge && (
+                <span className="text-[10px] px-2 py-px rounded-sm border border-white/[0.08] text-zinc-300 bg-white/[0.02]">
+                  {exp.badge}
+                </span>
+              )}
+              <p className="text-[12px] text-white/35">{exp.duration}</p>
             </div>
           </div>
-
-          {/* Right */}
-          <div className="text-right shrink-0">
-            <p className="text-[13px] text-zinc-300">
-              {exp.duration}
-            </p>
-
-            <p className="text-[12px] text-zinc-600 mt-[1px]">
-              {exp.location}
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-
-      {index !== experiences.length - 1 && (
-        <div className="border-t border-white/10" />
-      )}
+      <div className="flex justify-center mt-6">
+        <Link
+          to="/experience"
+          className="inline-flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-300 text-sm font-medium px-5 py-2 hover:bg-zinc-800 transition-all duration-200"
+        >
+          View all experience
+          <ArrowUpRight
+            size={12}
+            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </Link>
+      </div>
     </div>
-  ))}
-
-  {/* Footer */}
-  <div className="border-t border-white/10 p-3 flex justify-center">
-    <Link
-      to="/experience"
-      className="
-        group
-        flex
-        items-center
-        gap-1
-        rounded-[12px]
-        border
-        border-white/10
-        px-3
-        py-1.5
-        text-sm
-        text-white
-        hover:bg-white/[0.03]
-        transition-all
-      "
-    >
-      View All
-
-      <ArrowUpRight
-        size={14}
-        className="
-          transition-transform
-          duration-300
-          group-hover:-translate-y-[1px]
-          group-hover:translate-x-[1px]
-        "
-      />
-    </Link>
-  </div>
-  </div>
-    </div>
-  )
+  );
 }
