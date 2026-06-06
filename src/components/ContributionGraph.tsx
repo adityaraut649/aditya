@@ -7,7 +7,6 @@ const GITHUB_USER = "adityaraut649";
 
 const COLORS = ["#161b22", "#0d2d56", "#1a5a9a", "#2281d4", "#58b0f7"] as const;
 
-const DAY_NAMES = ["", "Mon", "", "Wed", "", "Fri", ""] as const;
 const MONTH_NAMES = [
   "Jan",
   "Feb",
@@ -113,12 +112,11 @@ export default function ContributionGraph() {
   }, []);
 
   const monthLabels = getMonthLabels(weeks);
-  const CELL = 8.5;
-  const GAP = 2;
+  const CELL = 9;
+  const GAP = 2.3;
   const COL = CELL + GAP;
 
   return (
-    // width:100% fills whatever column/card it sits in
     <section
       style={{
         width: "100%",
@@ -147,11 +145,10 @@ export default function ContributionGraph() {
       )}
 
       {!loading && !error && (
-        // overflow-x:auto scrolls horizontally on narrow screens instead of overflowing
         <div style={{ width: "100%", overflowX: "auto" }}>
           <div style={{ display: "inline-block", minWidth: "max-content" }}>
             {/* month labels */}
-            <div style={{ display: "flex", marginBottom: 4, marginLeft: 24 }}>
+            <div style={{ display: "flex", marginBottom: 4 }}>
               {(() => {
                 const items: React.ReactNode[] = [];
                 let prev = 0;
@@ -176,34 +173,8 @@ export default function ContributionGraph() {
               })()}
             </div>
 
-            {/* day labels + week grid */}
+            {/* week grid */}
             <div style={{ display: "flex" }}>
-              {/* weekday labels */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: GAP,
-                  marginRight: 6,
-                }}
-              >
-                {DAY_NAMES.map((name, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      height: CELL,
-                      fontSize: 10,
-                      color: "#484f58",
-                      display: "flex",
-                      alignItems: "center",
-                      minWidth: 28,
-                    }}
-                  >
-                    {name}
-                  </div>
-                ))}
-              </div>
-
               {/* weeks */}
               <div style={{ display: "flex", gap: GAP }}>
                 {weeks.map((week, wi) => (
